@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+@import './noto-emoji.css';
+
+@font-face {
+  font-family: 'Monument Extended';
+  src:
+    url('/fonts/PPMonumentExtended-Bold.woff2') format('woff2'),
+    url('/fonts/PPMonumentExtended-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Extended Italic';
+  src:
+    url('/fonts/PPMonumentExtended-BoldItalic.woff2') format('woff2'),
+    url('/fonts/PPMonumentExtended-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Narrow';
+  src:
+    url('/fonts/PPMonumentNarrow-Bold.woff2') format('woff2'),
+    url('/fonts/PPMonumentNarrow-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Narrow Italic';
+  src:
+    url('/fonts/PPMonumentNarrow-BoldItalic.woff2') format('woff2'),
+    url('/fonts/PPMonumentNarrow-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-monument-extended: 'Monument Extended', sans-serif;
+  --font-monument-extended-italic: 'Monument Extended Italic', sans-serif;
+  --font-monument-narrow: 'Monument Narrow', sans-serif;
+  --font-monument-narrow-italic: 'Monument Narrow Italic', sans-serif;
+}
+
+:root {
+  --bingo-bg: #000000;
+  --bingo-accent: #ffd400;
+  --bingo-false: #ff3b30;
+  --bingo-winner: #34c759;
+  --bingo-muted: rgba(255, 255, 255, 0.2);
+  --bingo-control: #3a3a3a;
+  --bingo-control-border: #6b6b6b;
+  --bingo-control-border-muted: color-mix(
+    in srgb,
+    var(--bingo-control-border) 30%,
+    transparent
+  );
+  --bingo-letter-size: clamp(1rem, 5.5vh, 4.4rem);
+  --bingo-selected-size: clamp(0.5rem, 5.5vh, 4.4rem);
+  --bingo-number-size: clamp(1rem, 3.2vh, 2.5rem);
+  --bingo-sidebar-text: clamp(0.7rem, 1.25vh, 0.85rem);
+  --bingo-sidebar-weight: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bingo-bg);
+  color: white;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+@layer base {
+  button,
+  input {
+    font-family: inherit;
+  }
+}
+
+/* Monochrome Noto Emoji -- tinted via currentColor (Figma "one color" look) */
+.emoji {
+  font-family: BingoNotoEmoji, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  /* Prefer text presentation so macOS doesn't swap in Apple Color Emoji */
+  font-variant-emoji: text;
+  font-synthesis: none;
+  color: var(--bingo-accent); /* yellow by default */
+}
+
+.emoji-false {
+  color: var(--bingo-false);
+}
+
+.emoji-winner {
+  color: var(--bingo-winner);
+}
+
+.sidebar-meta {
+  font-size: var(--bingo-sidebar-text);
+  font-weight: var(--bingo-sidebar-weight);
+  line-height: 1.35;
+}
+
+.font-yellowtail {
+  font-family: Yellowtail, cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-block;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes emoji-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emoji-spin {
+  animation: emoji-spin 5s linear infinite;
+}
+
+@keyframes oval-pop {
+  0% {
+    transform: scale(0.8);
+  }
+  10% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.oval-pop {
+  animation: oval-pop 1s cubic-bezier(0.2, 1.5, 0.5, 1);
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oval-pop {
+    animation: none;
+  }
+}
