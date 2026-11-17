@@ -23,7 +23,7 @@ export function BingoBoard() {
 
   return (
     <div
-      className="flex h-full w-full min-h-[min(70dvh,36rem)] min-w-0 flex-1 flex-col overflow-hidden rounded-[2.5rem] border-6 p-[clamp(0.75rem,1.4vw,1.25rem)] sm:min-h-0"
+      className="flex h-full w-full min-h-[min(70dvh,36rem)] min-w-0 flex-1 flex-col py-4 rounded-[2.5rem] sm:min-h-0 bg-blue-800"
       style={{ borderColor: accent }}
     >
       <div className="grid h-full grid-cols-5">
@@ -36,7 +36,7 @@ export function BingoBoard() {
               key={letter}
               className={`relative flex min-h-0 flex-col items-stretch ${columnHasLast ? 'z-10' : 'z-0'}`}
             >
-              <div className="mb-[clamp(0.35rem,0.8vh,0.75rem)] flex shrink-0 items-center justify-center pb-[clamp(0.35rem,0.8vh,0.65rem)]">
+              <div className="mb-[clamp(0.2rem,0.5vh,0.6rem)] flex shrink-0 items-center justify-center pb-[clamp(0.35rem,0.8vh,0.65rem)]">
                 <span
                   className="font-monument-extended-italic text-[length:var(--bingo-letter-size)] leading-none"
                   style={{ color: accent }}

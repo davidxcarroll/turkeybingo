@@ -50,7 +50,7 @@
 
 :root {
   --bingo-bg: #000000;
-  --bingo-accent: #ffd400;
+  --bingo-accent: #FFCC02;
   --bingo-false: #ff3b30;
   --bingo-winner: #34c759;
   --bingo-muted: rgba(255, 255, 255, 0.2);
@@ -61,7 +61,7 @@
     var(--bingo-control-border) 30%,
     transparent
   );
-  --bingo-letter-size: clamp(1rem, 5.5vh, 4.4rem);
+  --bingo-letter-size: clamp(1.2rem, 6.6vh, 5.28rem);
   --bingo-selected-size: clamp(0.5rem, 5.5vh, 4.4rem);
   --bingo-number-size: clamp(1rem, 3.2vh, 2.5rem);
   --bingo-sidebar-text: clamp(0.7rem, 1.25vh, 0.85rem);
