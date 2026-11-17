@@ -68,6 +68,13 @@
   --bingo-sidebar-weight: 600;
 }
 
+/* Half selected number + oval size below Tailwind `sm` (ovals use em) */
+@media (max-width: 639px) {
+  :root {
+    --bingo-selected-size: clamp(0.5rem, 2.75vh, 2.2rem);
+  }
+}
+
 *,
 *::before,
 *::after {

@@ -34,7 +34,7 @@ function AppShell() {
       {state.isPaused ? (
         <PauseLayout />
       ) : (
-        <div className="flex h-full w-full gap-[clamp(0.5rem,0.8vw,0.75rem)] p-[clamp(0.25rem,0.8vw,0.5rem)]">
+        <div className="flex h-full w-full flex-col gap-[clamp(0.5rem,0.8vw,0.75rem)] overflow-y-auto p-[clamp(0.25rem,0.8vw,0.5rem)] sm:flex-row sm:overflow-hidden">
           <BingoBoard />
           <Sidebar />
         </div>

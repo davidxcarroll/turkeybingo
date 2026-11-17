@@ -109,7 +109,7 @@ export function Controls({ variant = 'play' }: ControlsProps) {
   const hasPrizeText = prizeValue.trim() !== ''
   const hasPendingPrize = draft !== null && draft.trim() !== ''
   const iconBtnClass =
-    'flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--bingo-control-border-muted)] text-[#b0b0b0] hover:border-white/40 hover:text-white'
+    'flex aspect-square shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--bingo-control-border-muted)] text-[#b0b0b0] hover:border-white/40 hover:text-white'
 
   const isReviewish =
     variant === 'review' ||
@@ -120,7 +120,7 @@ export function Controls({ variant = 'play' }: ControlsProps) {
 
   const prizeField = showPrizeField ? (
     <div className="flex flex-col gap-1.5">
-      <div className="flex items-center gap-2">
+      <div className="flex items-stretch gap-2">
         <input
           id="prize-input"
           aria-label="Prize"
@@ -134,7 +134,7 @@ export function Controls({ variant = 'play' }: ControlsProps) {
               ;(e.target as HTMLInputElement).blur()
             }
           }}
-          className="sidebar-meta h-8 min-w-0 flex-1 rounded-full border border-[var(--bingo-control-border-muted)] bg-transparent px-3 text-white/70 text-center uppercase outline-none placeholder:text-[#8a8a8a] focus:border-white/20"
+          className="sidebar-meta min-w-0 flex-1 rounded-full border border-[var(--bingo-control-border-muted)] bg-transparent px-3 py-2 text-white/70 text-center uppercase outline-none placeholder:text-[#8a8a8a] focus:border-white/20"
         />
         {hasPendingPrize && (
           <button

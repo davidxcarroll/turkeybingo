@@ -23,7 +23,7 @@ export function BingoBoard() {
 
   return (
     <div
-      className="flex h-full w-full min-w-0 flex-1 flex-col overflow-hidden rounded-[2.5rem] border-6 p-[clamp(0.75rem,1.4vw,1.25rem)]"
+      className="flex h-full w-full min-h-[min(70dvh,36rem)] min-w-0 flex-1 flex-col overflow-hidden rounded-[2.5rem] border-6 p-[clamp(0.75rem,1.4vw,1.25rem)] sm:min-h-0"
       style={{ borderColor: accent }}
     >
       <div className="grid h-full grid-cols-5">
